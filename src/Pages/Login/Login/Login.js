@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import { Container,Typography,Button } from '@mui/material';
 import login from '../../../images/login.png'
+import { NavLink } from 'react-router-dom';
 const Login = () => {
   const [loginData,setLoginData]=useState({})
   const handleOnChange=e=>{
@@ -41,7 +42,13 @@ const Login = () => {
       onChange={handleOnChange}
       variant="standard"
       type="password" />
+      
        <Button  sx={{width:"75%",m:1}} type="submit"  variant="contained">Submit</Button>
+       <NavLink to="/register">
+      <Button 
+      style={{ textDecoration : "none"}}
+      variant="text">New User? Pleaser Register</Button>
+      </NavLink>
       </form>
         </Grid>
         <Grid item xs={12} md={6}>
