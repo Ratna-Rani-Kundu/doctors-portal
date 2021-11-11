@@ -52,10 +52,12 @@ const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
             })
             .then(res=>res.json())
             .then(data=>{
-              console.log(data)
+              if(data.insertedId){
+                handleBookingClose();
+              }
             })
 
-              handleBookingClose();
+             
               e.preventDefault();
       }
     return (
