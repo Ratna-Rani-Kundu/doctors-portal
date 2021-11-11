@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
@@ -8,7 +8,12 @@ import useAuth from '../../../hooks/useAuth';
 const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
     const {name,time}=booking;
      const {user}=useAuth();
-    const style = {
+
+     const [bookingInfo,SetBookinginfo]=useState({})
+      const handleOnBlur=e=>{
+
+      }
+     const style = {
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -53,6 +58,8 @@ const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
            
             sx={{width:'90%',m:1}}
           id="outlined-size-small"
+          name='name'
+          onBlur={handleOnBlur}
           defaultValue={user?.displayName}
           size="small"
         />
@@ -60,6 +67,8 @@ const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
            
             sx={{width:'90%',m:1}}
           id="outlined-size-small"
+          name='email'
+          onBlur={handleOnBlur}
           defaultValue={user.email}
           size="small"
         />
@@ -67,6 +76,8 @@ const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
            
             sx={{width:'90%',m:1}}
           id="outlined-size-small"
+          onBlur={handleOnBlur}
+          name='phone'
           defaultValue=' Phone Number'
           size="small"
         />

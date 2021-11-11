@@ -46,6 +46,7 @@ const Register = () => {
                                id="standard-basic" 
                                label="Your name" 
                                name='name'
+                               defaultValue={user?.displayName}
                                onBlur={handleOnBlur}
                                variant="standard" />
                            <TextField 
@@ -54,6 +55,7 @@ const Register = () => {
                                label="Your Email" 
                                name='email'
                                type="email"
+                               defaultValue={user?.email}
                                onBlur={handleOnBlur}
                                variant="standard" />
                            <TextField 
