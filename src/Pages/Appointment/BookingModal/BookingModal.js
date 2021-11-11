@@ -11,7 +11,7 @@ const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
 
      const [bookingInfo,SetBookinginfo]=useState({})
       const handleOnBlur=e=>{
-
+           
       }
      const style = {
         position: 'absolute',
