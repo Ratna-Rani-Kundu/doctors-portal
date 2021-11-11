@@ -40,13 +40,6 @@ const Login = () => {
             <TextField 
                  sx={{width:"75%",m:1}}
                  id="standard-basic" 
-                 label="Your Name" 
-                 name="name"
-                 onChange={handleOnChange}
-                 variant="standard" />
-            <TextField 
-                 sx={{width:"75%",m:1}}
-                 id="standard-basic" 
                  label="Your Email" 
                  name="email"
                  onChange={handleOnChange}

@@ -45,14 +45,14 @@ const Register = () => {
                                sx={{width:"75%",m:1}}
                                id="standard-basic" 
                                label="Your name" 
-                               name="name"
+                               name='name'
                                onBlur={handleOnBlur}
                                variant="standard" />
                            <TextField 
                                sx={{width:"75%",m:1}}
                                id="standard-basic" 
                                label="Your Email" 
-                               name="email"
+                               name='email'
                                type="email"
                                onBlur={handleOnBlur}
                                variant="standard" />
