@@ -5,13 +5,19 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import useAuth from '../../../hooks/useAuth';
+// import initializeFirebase from '../../../Firebase/firebase.init';
 const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
     const {name,time}=booking;
      const {user}=useAuth();
-
-     const [bookingInfo,SetBookinginfo]=useState({})
+   const initialInfo={patientName: user.displayName,email:user.email,phone:''}
+     const [bookingInfo,setBookingInfo]=useState(initialInfo)
       const handleOnBlur=e=>{
-           
+          const field=e.target.name;
+          const value=e.target.value; 
+          const newInfo ={...bookingInfo}
+          newInfo[field]=value;
+          console.log(newInfo)
+          setBookingInfo(newInfo)
       }
      const style = {
         position: 'absolute',
@@ -27,10 +33,28 @@ const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
 
 
       const handleBookingSubmit=(e)=>{
-              alert('submitting');
+       
 
               //collect data
+            const appointment={
+                 ...bookingInfo,
+                 time,
+                 name,
+                 date:date.toLocaleDateString()
+            }
               //send to the server
+             fetch('http://localhost:5000/appointments',{
+               method:'POST',
+             headers:{
+               'content-type':'application/json'
+             },
+             body:JSON.stringify(appointment)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+              console.log(data)
+            })
+
               handleBookingClose();
               e.preventDefault();
       }
