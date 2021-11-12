@@ -15,9 +15,10 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import Calendar from '../../Shared/Calendar/Calendar';
 import Appointments from '../Appointments/Appointments';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 200;
 
@@ -54,6 +55,7 @@ function Dashboardboard(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
+      
       <AppBar
         position="fixed"
         sx={{
@@ -61,7 +63,9 @@ function Dashboardboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
+        
         <Toolbar>
+        
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -71,16 +75,19 @@ function Dashboardboard(props) {
           >
             <MenuIcon />
           </IconButton>
+          
           <Typography variant="h6" noWrap component="div">
            Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
+      
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
+       
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
@@ -97,6 +104,9 @@ function Dashboardboard(props) {
         >
           {drawer}
         </Drawer>
+        <Link to="/appointment">
+          <Button style={{textDecoration:'none',color:"white"}} color="inherit">Appointment</Button>
+          </Link>
         <Drawer
           variant="permanent"
           sx={{
@@ -104,15 +114,22 @@ function Dashboardboard(props) {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
           open
+          
         >
+           
           {drawer}
+          
         </Drawer>
       </Box>
+      
       <Box
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        
       >
+      
         <Toolbar />
+        
         <Typography paragraph>
         <Grid container spacing={2}>
               <Grid item xs={12} sm={4}>
