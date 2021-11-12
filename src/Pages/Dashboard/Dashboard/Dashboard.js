@@ -63,7 +63,9 @@ function Dashboardboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        
+        <Link to="/appointment">
+          <Button style={{textDecoration:'none',color:"white"}} color="inherit">Appointment</Button>
+          </Link>
         <Toolbar>
         
           <IconButton
@@ -87,7 +89,7 @@ function Dashboardboard(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-       
+        
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
@@ -102,11 +104,10 @@ function Dashboardboard(props) {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
+         
           {drawer}
         </Drawer>
-        <Link to="/appointment">
-          <Button style={{textDecoration:'none',color:"white"}} color="inherit">Appointment</Button>
-          </Link>
+        
         <Drawer
           variant="permanent"
           sx={{
