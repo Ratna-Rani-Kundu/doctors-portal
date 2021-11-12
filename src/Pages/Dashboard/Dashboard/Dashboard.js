@@ -15,10 +15,12 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { Grid } from '@mui/material';
+import Calendar from '../../Shared/Calendar/Calendar';
 
 const drawerWidth = 200;
 
-function Dashboard(props) {
+function Dashboardboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -68,7 +70,7 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+           Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
@@ -110,7 +112,16 @@ function Dashboard(props) {
       >
         <Toolbar />
         <Typography paragraph>
-          content
+        <Grid container spacing={2}>
+              <Grid item xs={8}>
+                <Calendar></Calendar>
+              </Grid>
+              <Grid item xs={4}>
+               
+              </Grid>
+  
+  
+        </Grid>
         </Typography>
         
       </Box>
@@ -118,7 +129,7 @@ function Dashboard(props) {
   );
 }
 
-Dashboard.propTypes = {
+Dashboardboard.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -126,4 +137,4 @@ Dashboard.propTypes = {
   window: PropTypes.func,
 };
 
-export default Dashboard;
+export default Dashboardboard;
