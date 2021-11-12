@@ -8,8 +8,8 @@ import { NavLink,useLocation,useHistory } from 'react-router-dom';
 
 
 const Login = () => {
-  const [loginData,setLoginData]=useState({})
-  const {loginUser,user,signInWithGoogle,authError,isLoading}=useAuth()
+  const [loginData,setLoginData,]=useState({})
+  const {loginUser,signInWithGoogle,user,authError,isLoading}=useAuth()
   const location=useLocation()
   const history =useHistory()
   
@@ -66,7 +66,7 @@ const Login = () => {
                      </Alert>}
            </form>
                  <p>-----------------------------------</p> 
-                 <Button onclick={handleGoogleSignIn} 
+                 <Button onClick={handleGoogleSignIn} 
                         style={{ textDecoration : "none"}}
                         variant="contained">Google Sign In</Button>   
          </Grid>

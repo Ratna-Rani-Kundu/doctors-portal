@@ -17,6 +17,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import Calendar from '../../Shared/Calendar/Calendar';
+import Appointments from '../Appointments/Appointments';
 
 const drawerWidth = 200;
 
@@ -113,11 +114,11 @@ function Dashboardboard(props) {
         <Toolbar />
         <Typography paragraph>
         <Grid container spacing={2}>
-              <Grid item xs={8}>
+              <Grid item xs={12} sm={4}>
                 <Calendar></Calendar>
               </Grid>
-              <Grid item xs={4}>
-               
+              <Grid item xs={12} sm={8}>
+                <Appointments></Appointments>
               </Grid>
   
   
