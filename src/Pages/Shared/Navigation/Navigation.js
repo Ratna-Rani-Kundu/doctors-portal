@@ -29,6 +29,9 @@ const Navigation = () => {
             <Link to="/appointment">
             <Button style={{textDecoration:'none',color:"white"}} color="inherit">Appointment</Button>
             </Link>
+            <NavLink style={{textDecoration:'none' ,color:"white"}} to="/dashboard">
+              <Button color="inherit">Dashboard</Button>
+              </NavLink>
             {
               user?.email 
               ? 

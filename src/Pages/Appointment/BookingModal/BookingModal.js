@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import useAuth from '../../../hooks/useAuth';
 // import initializeFirebase from '../../../Firebase/firebase.init';
-const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
+const BookingModal = ({setBookingSuccess,openBooking,booking,handleBookingClose,date}) => {
     const {name,time}=booking;
      const {user}=useAuth();
    const initialInfo={patientName: user.displayName,email:user.email,phone:''}
@@ -53,6 +53,7 @@ const BookingModal = ({openBooking,booking,handleBookingClose,date}) => {
             .then(res=>res.json())
             .then(data=>{
               if(data.insertedId){
+                setBookingSuccess(true)
                 handleBookingClose();
               }
             })
