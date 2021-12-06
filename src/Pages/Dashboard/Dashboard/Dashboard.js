@@ -15,9 +15,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Button, Grid } from '@mui/material';
-import Calendar from '../../Shared/Calendar/Calendar';
-import Appointments from '../Appointments/Appointments';
+import { Button } from '@mui/material';
+
+
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 200;
@@ -25,8 +25,8 @@ const drawerWidth = 200;
 function Dashboardboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
- const [date,setDate]= React.useState(new Date())
-  console.log(date)
+ 
+ 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -131,24 +131,7 @@ function Dashboardboard(props) {
       
         <Toolbar />
         
-        <Typography paragraph>
-        <Grid container spacing={2}>
-              <Grid item xs={12} sm={4}>
-                <Calendar
-                  date={date}
-                  setDate={setDate}
-                ></Calendar>
-              </Grid>
-              <Grid item xs={12} sm={8}>
-                <Appointments 
-                date={date}
-                
-                ></Appointments>
-              </Grid>
-  
-  
-        </Grid>
-        </Typography>
+        
         
       </Box>
     </Box>
